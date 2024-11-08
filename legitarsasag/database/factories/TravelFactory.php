@@ -1,7 +1,8 @@
 <?php
 
 namespace Database\Factories;
-
+use App\Models\User;
+use App\Models\Flight;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,11 @@ class TravelFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'evaluation'=>fake('hu_Hu')->sentence,
+            'flight_id'=> Flight::all()->random()->flight_id,
+            'user_id'=> User::all()->random()->id,
+            
+
         ];
     }
 }

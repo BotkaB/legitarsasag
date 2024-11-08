@@ -1,5 +1,5 @@
 <?php
-
+use App\Models\Airline;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,13 +17,22 @@ return new class extends Migration
             $table->string('country');
             $table->timestamps();
         });
+
+        Airline::create ([
+            'airline_id'=>1,
+            'name'=>'XXXXXXX', 
+            'country'=>'Hungary']);
     }
 
     /**
      * Reverse the migrations.
      */
+
+
+
     public function down(): void
     {
         Schema::dropIfExists('airlines');
     }
+
 };
